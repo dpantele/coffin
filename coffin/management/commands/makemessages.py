@@ -54,8 +54,6 @@ class Command(makemessages.Command):
 
         def my_templatize(src, origin=None):
             new_src = strip_whitespaces(src)
-            if new_src != src:
-                print new_src
             return old_templatize(new_src, origin)
 
         trans_real.templatize = my_templatize

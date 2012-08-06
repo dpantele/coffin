@@ -33,8 +33,8 @@ strip_whitespace_right = re.compile(r"(%s-?\s*(trans|pluralize).*?-%s)\s+" % (BL
 strip_whitespace_left = re.compile(r"\s+(%s-\s*(endtrans|pluralize).*?-?%s)" % (BLOCK_TAG_START, BLOCK_TAG_END), re.U)
 
 def strip_whitespaces(src):
-    src = strip_whitespace_left.sub('\1', src)
-    src = strip_whitespace_right.sub('\1', src)
+    src = strip_whitespace_left.sub(r'\1', src)
+    src = strip_whitespace_right.sub(r'\1', src)
     return src
 
 class Command(makemessages.Command):
